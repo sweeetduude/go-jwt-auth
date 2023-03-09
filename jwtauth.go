@@ -76,7 +76,7 @@ func Refresh(secret string, request http.Request, writer http.ResponseWriter) er
 func Validate(secret string, request http.Request) (string, error) {
 	cookie, err := request.Cookie("token")
 
-	if err != nil && cookie.Value == "" {
+	if err != nil || cookie.Value == "" {
 		return "", fmt.Errorf("error: %f", err)
 	}
 
