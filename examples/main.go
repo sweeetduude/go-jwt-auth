@@ -33,7 +33,20 @@ func main() {
 		if err != nil {
 			fmt.Println("user validation error")
 		} else {
-			fmt.Printf("user %s is logged in", subject)
+			fmt.Printf("user %s is logged in\n", subject)
+		}
+	})
+
+	// User function jwtauth.Refresh to refresh an active token.
+	// It will prolong the token with the same time as initially used
+	// to create the token
+	http.HandleFunc("/refresh", func(w http.ResponseWriter, r *http.Request) {
+		err := jwtauth.Refresh(secretKey, *r, w)
+
+		if err != nil {
+			fmt.Println("token refresh error")
+		} else {
+			fmt.Println("token refreshed")
 		}
 	})
 
