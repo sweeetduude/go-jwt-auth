@@ -1,6 +1,8 @@
 # go-jwt-auth
 
-A simple wrapper for creating session authentication cookies based on JWT.
+A simple wrapper, written in GO, for creating session authentication cookies based on JWT.
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/sweeetduude/go-jwt-auth.svg)](https://pkg.go.dev/github.com/sweeetduude/go-jwt-auth)
 
 ## Installation
 
