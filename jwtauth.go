@@ -27,6 +27,7 @@ func Authenticate(subject string, secret string, expire int64, writer http.Respo
 		Name:    "token",
 		Value:   tokenString,
 		Expires: time.Unix(expireTime, 0),
+		Path:    "/",
 	})
 
 	return nil
