@@ -115,5 +115,6 @@ func Revoke(writer http.ResponseWriter) {
 		Name:    "token",
 		Value:   "",
 		Expires: time.Unix(0, 0),
+		Path:    "/",
 	})
 }
