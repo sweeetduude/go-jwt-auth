@@ -112,9 +112,9 @@ func Validate(secret string, request http.Request) (string, error) {
 
 func Revoke(writer http.ResponseWriter) {
 	http.SetCookie(writer, &http.Cookie{
-		Name:    "token",
-		Value:   "",
-		Expires: time.Unix(0, 0),
-		Path:    "/",
+		Name:   "token",
+		Value:  "",
+		MaxAge: -1,
+		Path:   "/",
 	})
 }
